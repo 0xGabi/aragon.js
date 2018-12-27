@@ -1,8 +1,8 @@
-var ProviderEngine = require("web3-provider-engine");
-var HookedSubprovider = require('web3-provider-engine/subproviders/hooked-wallet.js');
+//var ProviderEngine = require("web3-provider-engine");
+//var HookedSubprovider = require('web3-provider-engine/subproviders/hooked-wallet.js');
 var initAragonJS = require('./utils/aragonjs-wrapper');
 
-function AragonProvider(subProvider, ens, dao, forwardingAddress) {
+var AragonProvider = function AragonProvider(subProvider, ens, dao, forwardingAddress) {
   this.addresses = [forwardingAddress];
   this.subProvider = subProvider;
   this.wrapper = {}
@@ -17,8 +17,8 @@ function AragonProvider(subProvider, ens, dao, forwardingAddress) {
     this.accounts = accounts.result
 
     initAragonJS(dao, ens, {
-      accounts: this.accounts,
       provider: this.subProvider,
+      accounts: this.accounts,
       onTransaction: transaction => {
         this.transactionPaths = transaction
       }

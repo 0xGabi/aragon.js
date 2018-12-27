@@ -21,7 +21,7 @@ const providerForNetwork = () => (
         developmentProvider,
         "0x5f6f7e8cc7346a11ca2def8f827b7a0b612c56a1",
         "0xCb0FF465e3847606603A51cc946353A41Fea54c0",
-        "0x037D0f69250A5B21c8902c9efd71f467Df8680bE")
+        "0x037d0f69250a5b21c8902c9efd71f467df8680be")
     }
   )
 
