@@ -1,43 +1,4 @@
-//import { BigNumber } from 'bignumber.js'
 import Aragon from '@aragon/wrapper'
-//{
-  //providers,
-  //setupTemplates,
-  //isNameUsed,
-  //ensResolve,
-//} from '@aragon/wrapper'
-
-// import {
-//   appOverrides,
-//   sortAppsPair,
-//   appLocator,
-//   ipfsDefaultConf,
-// } from './environment'
-
-// const appSrc = (app, gateway = ipfsDefaultConf.gateway) => {
-//   const hash = app.content && app.content.location
-//   if (!hash) return ''
-
-//   if (appLocator[app.appId]) {
-//     return appLocator[app.appId]
-//   }
-
-//   return `${gateway}/${hash}/`
-// }
-
-// Subscribe to wrapper's observables
-
-
-// const resolveEnsDomain = async (domain, opts) => {
-//   try {
-//     return await ensResolve(domain, opts)
-//   } catch (err) {
-//     if (err.message === 'ENS name not defined.') {
-//       return ''
-//     }
-//     throw err
-//   }
-// }
 
 const noop = () => {}
 
@@ -75,13 +36,12 @@ const initWrapper = async (
   } = {}
 ) => {
   const wrapper = new Aragon(dao, {
-    ensRegistryAddress,
-    provider,
-    apm: { ipfs: ipfsConf },
+    apm: { ensRegistryAddress, ipfs: ipfsConf },
+    provider
   })
 
   try {
-    await wrapper.init(accounts || [accounts])
+    await wrapper.init( accounts || [accounts])
   } catch (err) {
     if (err.message === 'connection not open') {
       onError(

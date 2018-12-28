@@ -1,6 +1,4 @@
-//var ProviderEngine = require("web3-provider-engine");
-//var HookedSubprovider = require('web3-provider-engine/subproviders/hooked-wallet.js');
-var initAragonJS = require('./utils/aragonjs-wrapper');
+const initAragonJS = require('./utils/aragonjs-wrapper');
 
 var AragonProvider = function AragonProvider(subProvider, ens, dao, forwardingAddress) {
   this.addresses = [forwardingAddress];

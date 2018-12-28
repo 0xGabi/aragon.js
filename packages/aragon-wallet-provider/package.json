@@ -68,7 +68,7 @@
     "production": ">2%, last 1 edge versions, not ie > 0, not op_mini all"
   },
   "dependencies": {
-    "@aragon/wrapper": "^2.0.1",
+    "@aragon/wrapper": "^3.0.0-beta.3",
     "@babel/runtime": "^7.1.2",
     "web3": "^1.0.0-beta.36",
     "web3-provider-engine": "^14.0.6",
