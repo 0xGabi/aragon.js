@@ -1,10 +1,10 @@
-const initAragonJS = require('./utils/aragonjs-wrapper');
+import initAragonJS from './utils/aragonjs-wrapper'
 
 var AragonProvider = function AragonProvider(subProvider, ens, dao, forwardingAddress) {
   this.addresses = [forwardingAddress];
   this.subProvider = subProvider;
   this.wrapper = {}
-  this.accounts = []
+  this.accounts = [];
 
   this.subProvider.send({
     jsonrpc: '2.0',
